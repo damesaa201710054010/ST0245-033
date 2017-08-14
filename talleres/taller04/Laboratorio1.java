@@ -45,6 +45,22 @@ public class Laboratorio1 {
         long estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
     }
+    
+    public static int[] Ordenar(int[] array) {
+        int n = array.length;
+        int temp = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i; j > 0; j--) {
+                if(array[j-1]> array[j]){
+                temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+                }
+            }
+        }
+
+        return array;
+    }
 }
 
 
