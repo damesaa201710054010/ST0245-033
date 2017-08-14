@@ -46,15 +46,15 @@ public class Laboratorio1 {
         return estimatedTime;
     }
     
-    public static int[] Ordenar(int[] array) {
+   public static int[] Ordenar(int[] array) {
         int n = array.length;
         int temp = 0;
         for (int i = 0; i < n - 1; i++) {
             for (int j = i; j > 0; j--) {
-                if(array[j-1]> array[j]){
+                if(array[j-1] > array[j]){
                 temp = array[j];
-                array[j] = array[i];
-                array[i] = temp;
+                array[j] = array[j-1];
+                array[j-1] = temp;
                 }
             }
         }
