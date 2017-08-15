@@ -1,9 +1,9 @@
-package laboratorio1;
+package Taller4;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Laboratorio1 {
+public class Taller4 {
 
     public static void main(String[] args) {
         
