@@ -56,6 +56,56 @@ public class EjerciciosEnLinea {
     }
     
     
+    /**
+     * Este metodo devuelve la cantidad de orejas que tienen entre todos los
+     * conejos, tomando que para los conejos pares, estos tienen una pata
+     * levantada que se toma como una oreja, es decir tienen 3 orejas, para el
+     * resto son 2 orejas cada uno.
+     *
+     * @param bunnies El parametro bunnies define el numero de conejos
+     * @return La cantidad de orejas que se tiene entre todos los conejos
+     */
+    public int bunnyEars2(int bunnies) {
+        if (bunnies == 0) {
+            return 0;
+        }
+        if (bunnies % 2 == 0) {
+            return bunnyEars2(bunnies - 1) + 3;
+        }
+        return bunnyEars2(bunnies - 1) + 2;
+    }
+
+    /**
+     * Este metodo devuelve la cantidad de bloques que hay en un triangulo
+     * construido como sigue: en la fila uno hay un bloque, en la fila dos hay
+     * dos bloques, y asi sucesivamente
+     * @param rows El número de filas que tiene el triangulo a evaluar
+     * @return El número de bloques que hay en el triangulo
+     */
+    public int triangle(int rows) {
+        if (rows == 0) {
+            return 0;
+        }
+
+        if (rows == 1) {
+            return 1;
+        }
+        return triangle(rows - 1) + rows;
+    }
+
+    /**
+     * Este metodo devuelve la suma de los digitos de un número
+     * @param n El número a evaluar
+     * @return La suma de sus dígitos
+     */
+    public int sumDigits(int n) {
+        if (n / 10 == 0) {
+            return n;
+        }
+        return sumDigits(n / 10) + sumDigits(n % 10);
+    }
+
+    
 
     /**
      * @param args the command line arguments
