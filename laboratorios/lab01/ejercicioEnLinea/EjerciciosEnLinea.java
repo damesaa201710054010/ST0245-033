@@ -27,6 +27,35 @@ public class EjerciciosEnLinea {
         }
         return n * factorial(n - 1);
     }
+    
+    /**
+     * Este metodo devuelve la cantidad de orejas que tienen entre todos los
+     * conejos, tomando que cada conejo tiene dos orejas
+     *
+     * @param bunnies El parametro bunnies define el numero de conejos
+     * @return La cantidad de orejas que tienen los conejos
+     */
+    public int bunnyEars(int bunnies) {
+        if (bunnies == 0) {
+            return 0;
+        }
+        return 2 + bunnyEars(bunnies - 1);
+    }
+
+    /**
+     * Este metodo devuelve el n-esimo numero de la secuencia de fibonacci
+     * @param n el n-esimo que se desea encontrar en la serie de fibonacci
+     * @return el n-esimo numero de la serie de fibonacci
+     */
+    public int fibonacci(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+    
+    
 
     /**
      * @param args the command line arguments
