@@ -61,20 +61,35 @@ public class Laboratorio1
         return array;
     }
   
-   public static long tomarTiempoFibo(int n) {
-        //int[] a = generarArregloDeTamanoN(n);
+  public static long tomarTiempoFibo(int n)
+    {
+       //int[] a = generarArregloDeTamanoN(n);
+       long startTime = System.currentTimeMillis();
+       System.out.println("Valor de Fibo: "+Fibonnacci(n));
+       long estimatedTime = System.currentTimeMillis() - startTime;
+       return estimatedTime;
+    }
+   
+  public static long tomarTiempoSum(int n) 
+   {
+        int[] a = generarArregloDeTamanoN(n);
         long startTime = System.currentTimeMillis();
-        System.out.println("Valor de Fibo: "+Fibonnacci(n));
+        System.out.println("Valor de la suma: "+ArraySum(a, n-1));
         long estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
     }
-  
+   
   public static void main(String[] args)
-  {
-      for(int i = 20; i <= 30; i = i + 5)
-      {
-        System.out.println("Tiempo en milisegundos: " + tomarTiempoFibo(i));
-      }
+    {
+	/*for(int i = 20; i <= 30; i = i + 5)
+	  {
+	  System.out.println("Tiempo en milisegundos: " + tomarTiempoFibo(i));
+	  }*/
+      
+	for(int i = 100000; i <= 10000000; i = i*10)
+	    {
+		System.out.println("Tiempo: " + tomarTiempoSum(i));
+	    }
       
       
       
@@ -84,18 +99,16 @@ public class Laboratorio1
       
       
       
-      
-      
-    /*int[] A = {1,5,3,2,6};
-      int[] B = {1,5,3,2};
-      int[] C = {1,5,2,6};
-      int [] D = {5};
-      int[][] Arrays = {A,B,C,D};   
-      for (int[] X : Arrays)
-      {        
-      System.out.println(Laboratorio1.ArraySum(X, X.length - 1) + " " + 
-              Laboratorio1.ArrayMax(X, X.length -1) + " " + Laboratorio1.Fibonnacci(X.length) +  "\n" );      
-      }*/
+	/*int[] A = {1,5,3,2,6};
+	  int[] B = {1,5,3,2};
+	  int[] C = {1,5,2,6};
+	  int [] D = {5};
+	  int[][] Arrays = {A,B,C,D};   
+	  for (int[] X : Arrays)
+	  {        
+	  System.out.println(Laboratorio1.ArraySum(X, X.length - 1) + " " + 
+	  Laboratorio1.ArrayMax(X, X.length -1) + " " + Laboratorio1.Fibonnacci(X.length) +  "\n" );      
+	  }*/
       
   }
   
