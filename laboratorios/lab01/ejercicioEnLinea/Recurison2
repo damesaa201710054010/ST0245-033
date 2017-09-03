@@ -1,0 +1,66 @@
+public class Recursion2 {
+
+//Metodo groupSum6, count6 y groumpSum tomado de: https://codingbatanswers.wordpress.com/recursion-2/
+    public boolean groupSum6(int start, int[] nums, int target) {
+        if (start >= nums.length) {
+            return (target == 0);
+        }
+
+        int diff = target - (6 * count6(start, nums));
+        if (groupSum(start, nums, diff)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public int count6(int start, int[] nums) {
+        int count = 0;
+        if (nums[start] == 6) {
+            count++;
+            nums[start] = 0;
+        }
+        if (start + 1 < nums.length) {
+            count += count6(start + 1, nums);
+        }
+        return count;
+    }
+
+//this one (below) is the solution to groupSum but include it
+//in groupSum6
+    public boolean groupSum(int start, int[] nums, int target) {
+        if (start >= nums.length) {//C1
+            return (target == 0);//C2
+        }
+        if (groupSum(start + 1, nums, target - nums[start])) {//C3+T(n-1)
+            return true;//C4
+        }
+        if (groupSum(start + 1, nums, target)) {//C5+T(n-1)
+            return true;//C6
+        }
+        return false;
+    }
+
+    /**
+     * Complejidad 
+     * T(n) = C1+C3+C5+2[T(n-1)] 
+     * T(n) = C+2[T(n-1)] 
+     * luego T(n) es O(n)
+     */
+    public boolean groupNoAdj(int start, int[] nums, int target) {
+        if (start >= nums.length) {//C1
+            return target == 0;//C2
+        }
+        return groupNoAdj(start + 1, nums, target) || groupNoAdj(start + 2, nums, target - nums[start]);//2[T(n-1)]
+    }
+    
+    /**
+     * Complejidad 
+     * T(n) = C1+2[T(n-1)] 
+     * luego T(n) es O(n)
+     */
+
+    public static void main(String[] args) {
+    }
+
+}
