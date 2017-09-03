@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -22,11 +22,18 @@ public class EjerciciosEnLinea {
      * @return El factorial del numero n
      */
     public int factorial(int n) {
-        if (n == 0) {
-            return 1;
+        if (n == 0) {                  // C
+            return 1;                  //C
         }
-        return n * factorial(n - 1);
+        return n * factorial(n - 1);  // C + T(n-1)
     }
+
+	T(n) = C + C + C + T(n-1)
+	T(n) = C + T(n-1)
+	T(n) = C*n + C1
+	T(n) es O(C*n + c1)
+	     es O(C*n) RS
+	     es O(n) RP
     
     /**
      * Este metodo devuelve la cantidad de orejas que tienen entre todos los
@@ -36,11 +43,18 @@ public class EjerciciosEnLinea {
      * @return La cantidad de orejas que tienen los conejos
      */
     public int bunnyEars(int bunnies) {
-        if (bunnies == 0) {
-            return 0;
+        if (bunnies == 0) {			//c
+            return 0;				//c
         }
-        return 2 + bunnyEars(bunnies - 1);
+        return 2 + bunnyEars(bunnies - 1);	//c + T(n-1)
     }
+
+	T(n) = c + T(n-1)
+	T(n) = c n + c1
+	T(n) es  O(cn + c1)
+	     es  O(cn) RS
+	     es  O(n)  RP
+	
 
     /**
      * Este metodo devuelve el n-esimo numero de la secuencia de fibonacci
