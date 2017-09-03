@@ -1,20 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Laboratorio1;
-/**
- * Laboratorio 4 de Estructuras de Datos 1
- * 
- * @author Mauricio Toro 
- * @version 1
- */
 import java.util.*;
 
 public class Laboratorio1
 {
-  // Computes the sum of an array recursively
   public static int ArraySum(int[] A, int n)
   {          
       int sum;
@@ -25,7 +12,6 @@ public class Laboratorio1
       return sum;
   }
   
-  // Computes the maximum value of an array recursively
   public static int ArrayMax(int[] A, int n)
   {
       int max;
@@ -36,7 +22,6 @@ public class Laboratorio1
       return max;
   }
   
-  // Computes Fibonnacci series recursively
   public static int Fibonnacci(int n)
   {
      int result;
@@ -90,30 +75,17 @@ public class Laboratorio1
   {
       /*for(int i = 30; i <= 45; i = i + 5)
       {
-        System.out.println("Tiempo en milisegundos: " + tomarTiempoFibo(i));
+        System.out.println("Tiempo en milisegundos para i = "+i+": " + tomarTiempoFibo(i));
       }*/
       
-      /*for(int i = 100000; i <= 10000000; i = i*10)
+      for(int i = 500000; i <= 62500000; i = i*5)
       {
-        System.out.println("Tiempo: " + tomarTiempoSum(i));
-      }*/
-      
-      for(int i = 100000; i <= 10000000; i = i*10)
-      {
-        System.out.println(tomarTiempoMax(i));
+        System.out.println("Tiempo para i = "+i+": " + tomarTiempoSum(i));
       }
       
-    /*int[] A = {1,5,3,2,6};
-      int[] B = {1,5,3,2};
-      int[] C = {1,5,2,6};
-      int [] D = {5};
-      int[][] Arrays = {A,B,C,D};   
-      for (int[] X : Arrays)
-      {        
-      System.out.println(Laboratorio1.ArraySum(X, X.length - 1) + " " + 
-              Laboratorio1.ArrayMax(X, X.length -1) + " " + Laboratorio1.Fibonnacci(X.length) +  "\n" );      
-      }*/
-      
+      /*for(int i = 500000; i <= 65500000; i = i * 5)
+      {
+        System.out.println("Tiempo para i = "+i+": "+tomarTiempoMax(i));
+	}*/
   }
-  
 }
