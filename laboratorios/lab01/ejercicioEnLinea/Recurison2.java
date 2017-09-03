@@ -73,6 +73,51 @@ public class Recursion2 {
      * T(n) = C1+2[T(n-1)] 
      * luego T(n) es O(n)
      */
+    
+    public boolean groupSum5(int start, int[] nums, int target) {
+        if (start >= nums.length) {//C1
+            return (target == 0);
+        }
+
+        int cin = target - (countM5(start, nums));//C2 + n
+        if (groupSum(start, nums, cin)) {// C3 + 2**n
+            return true;
+        }
+        return false;
+
+    }
+    
+    /**
+     * Complejidad:
+     * T(n) = C1 + C2 + C3 + n + 2**n
+     * T(n) = C + n + 2**n
+     * luego T(n) es O(2**n)
+     */
+
+    public int countM5(int start, int[] nums) {
+        int count = 0;//C1
+        if (nums[start]%5 == 0) {//C2
+            count+=nums[start];
+            nums[start] = 0;
+            if (start + 1 < nums.length) {
+                  if (nums[start+1] == 1) {
+                        nums[start+1] = 0;
+                  }
+              
+            }
+        }
+        if (start + 1 < nums.length) {//C3
+            count += countM5(start + 1, nums);//C4 + T(n-1)
+        }
+        return count;
+    }
+    /**
+     * Complejidad:
+     * T(n) = C1 + C2 + C3 + C4 + T(n-1)
+     * T(n) = C + T(n-1)
+     * luego T(n) es O(n)
+     */
+
 
     public static void main(String[] args) {
     }
