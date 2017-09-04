@@ -1,10 +1,3 @@
-ï»¿/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ejerciciosenlinea;
-
 /**
  * En esta clase se entregan los ejercicios realizados sobre recursion de la
  * pagina: http://codingbat.com/java
@@ -13,7 +6,7 @@ package ejerciciosenlinea;
  * @author Daniel Mesa
  * @see <a href = "http://codingbat.com/java"> CodingBat </a>
  */
-public class EjerciciosEnLinea {
+public class Recursion1 {
     
 
     /**
@@ -22,18 +15,11 @@ public class EjerciciosEnLinea {
      * @return El factorial del numero n
      */
     public int factorial(int n) {
-        if (n == 0) {                  // C
-            return 1;                  //C
+        if (n == 0) {
+            return 1;
         }
-        return n * factorial(n - 1);  // C + T(n-1)
+        return n * factorial(n - 1);
     }
-
-	T(n) = C + C + C + T(n-1)
-	T(n) = C + T(n-1)
-	T(n) = C*n + C1
-	T(n) es O(C*n + c1)
-	     es O(C*n) RS
-	     es O(n) RP
     
     /**
      * Este metodo devuelve la cantidad de orejas que tienen entre todos los
@@ -43,18 +29,11 @@ public class EjerciciosEnLinea {
      * @return La cantidad de orejas que tienen los conejos
      */
     public int bunnyEars(int bunnies) {
-        if (bunnies == 0) {			//c
-            return 0;				//c
+        if (bunnies == 0) {
+            return 0;
         }
-        return 2 + bunnyEars(bunnies - 1);	//c + T(n-1)
+        return 2 + bunnyEars(bunnies - 1);
     }
-
-	T(n) = c + T(n-1)
-	T(n) = c n + c1
-	T(n) es  O(cn + c1)
-	     es  O(cn) RS
-	     es  O(n)  RP
-	
 
     /**
      * Este metodo devuelve el n-esimo numero de la secuencia de fibonacci
@@ -93,8 +72,8 @@ public class EjerciciosEnLinea {
      * Este metodo devuelve la cantidad de bloques que hay en un triangulo
      * construido como sigue: en la fila uno hay un bloque, en la fila dos hay
      * dos bloques, y asi sucesivamente
-     * @param rows El nÃºmero de filas que tiene el triangulo a evaluar
-     * @return El nÃºmero de bloques que hay en el triangulo
+     * @param rows El número de filas que tiene el triangulo a evaluar
+     * @return El número de bloques que hay en el triangulo
      */
     public int triangle(int rows) {
         if (rows == 0) {
@@ -108,9 +87,9 @@ public class EjerciciosEnLinea {
     }
 
     /**
-     * Este metodo devuelve la suma de los digitos de un nÃºmero
-     * @param n El nÃºmero a evaluar
-     * @return La suma de sus dÃ­gitos
+     * Este metodo devuelve la suma de los digitos de un número
+     * @param n El número a evaluar
+     * @return La suma de sus dígitos
      */
     public int sumDigits(int n) {
         if (n / 10 == 0) {
