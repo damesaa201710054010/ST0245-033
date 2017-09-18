@@ -1,3 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package laboratorio2;
 import java.util.*;
 /**
  * Laboratorio 2 de Estructuras de Datos 1. 
@@ -70,11 +76,11 @@ public class Laboratorio2 {
     }
         
     /**
-     * Es un metodo recursivo
-     * @param a
-     * @param tmp
-     * @param left
-     * @param right 
+     * Es un metodo recursivo que divide el problema de ordenamiento
+     * @param a arreglo de tipo entero
+     * @param tmp una copia del arreglo original es decir de "a" tambien de tipo entero
+     * @param left posicion inicial a la izquierda de tipo entero
+     * @param right posicion final a la derecha, de tipo entero
      */
     private static void mergeSort(int[] a, int[] tmp, int left, int right) {
         if (left < right) {
@@ -86,12 +92,13 @@ public class Laboratorio2 {
     }
 
     /**
-     * 
-     * @param a
-     * @param tmp
-     * @param left
-     * @param right
-     * @param rightEnd 
+     * Este metodo ó funcion se encarga de ordenar el arreglo por partes y en la copia del original
+     * haciendo la operacion mas eficiente
+     * @param a arreglo de enteros
+     * @param tmp copia del arreglo "a" tambien de enteros
+     * @param left posicion inicial mas a la izquierda 
+     * @param right una posisicon o longitud es de tipo entero
+     * @param rightEnd longitud del arreglo de tipo entero
      */
     private static void merge(int[] a, int[] tmp, int left, int right, int rightEnd) {
         int leftEnd = right - 1;
@@ -132,7 +139,7 @@ public class Laboratorio2 {
     {
         int[] a = generarArregloDeTamanoN(n);
         long startTime = System.currentTimeMillis();
-        /*System.out.println("Valor : "+  */ArrayMax(a);
+        /*System.out.println("Valor : "+  */ArrayMax(a); //reemplazar por la funcion a tomar tiempo
         long estimatedTime = System.currentTimeMillis() - startTime;
         return estimatedTime;
     }
