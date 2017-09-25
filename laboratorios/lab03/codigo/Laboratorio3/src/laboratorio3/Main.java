@@ -17,11 +17,12 @@ public class Main
     public static void main(String[] args)
     {   
         //para los primeros tres putnos
-        /*LinkedList lis = new LinkedList();
+        LinkedList lis = new LinkedList();
         lis.add(1);
         lis.add(2);
         lis.add(3);
         lis.add(4);
+        
         ArrayList lis2 = new ArrayList();
         lis2.add(1);
         lis2.add(2);
@@ -44,15 +45,15 @@ public class Main
         lispi2.add(11);
         //lispi2.add(10);
         Laboratorio3 ins = new Laboratorio3();
-        System.out.println(ins.multp(lis));
-        System.out.println(ins.multIt(lis2));
+        //System.out.println(ins.multp(lis));
+        //System.out.println(ins.multIt(lis2));
         
-        System.out.println(ins.SmartInsert(lis, 5));
+        //System.out.println(ins.SmartInsert(lis, 5));
         
-        System.out.println(ins.pivote(lispi2));*/
+        System.out.println(ins.pivote(lispi2));
         
         //para el punto 1.4
-        Neveras uno = new Neveras(1, "haceb");
+        /*Neveras uno = new Neveras(1, "haceb");
         Neveras dos = new Neveras(2, "lg");
         Neveras tres = new Neveras(3, "ibm");
         Neveras cuatro = new Neveras(4, "haceb");
@@ -90,6 +91,6 @@ public class Main
         }catch(IOException e)
         {
             System.out.println();
-        }
+        }*/
     }
 }
