@@ -1,19 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3;
 import java.io.IOException;
 import java.util.*;
 /**
- *
- * @author danys
+ * Laboratorio 3 de Estructuras de Datos 1. 
+ * Esta clase implementa los metodos de las clases Laboratorio3, Distribuccion, con ejemplos de lsitas
+ * 
+ * @author: Kevin Arley Parra Henao - Codigo: 201710093010, Daniel Alejandro Mesa Arango - Codigo: 201710054010 
+ * @version: 1.0 24/09/2017
  */
 public class Main 
 {
-    public static void main(String[] args) throws IOException 
+    /**
+     * Meotodo principal, implementa algunos ejemplos con listas
+     * @param args 
+     */
+    public static void main(String[] args)
     {   
+        //para los primeros tres putnos
         /*LinkedList lis = new LinkedList();
         lis.add(1);
         lis.add(2);
@@ -48,6 +51,7 @@ public class Main
         
         System.out.println(ins.pivote(lispi2));*/
         
+        //para el punto 1.4
         Neveras uno = new Neveras(1, "haceb");
         Neveras dos = new Neveras(2, "lg");
         Neveras tres = new Neveras(3, "ibm");
@@ -81,6 +85,11 @@ public class Main
         solicitudes.add(sol3);
         solicitudes.add(sol4);
         Distribucion dis1 = new Distribucion();
-        dis1.ejercicio4(neveras, solicitudes);
+        try{
+            dis1.ejercicio4(neveras, solicitudes);
+        }catch(IOException e)
+        {
+            System.out.println();
+        }
     }
 }
