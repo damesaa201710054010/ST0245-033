@@ -9,6 +9,7 @@ import java.io.*;
  * @version: 1.0 24/09/2017
  */
 public class Distribucion {
+    private LinkedList<Neveras> neveras;
     /**
      * Este metodo reparte en el orden correcto las neveras del amacen a los pedidos hechos por las empresas, imprime el orden
      * y pedidos
@@ -18,28 +19,24 @@ public class Distribucion {
      */
     public void ejercicio4(LinkedList<Neveras> neveras, LinkedList<Solicitud> solicitudes)throws IOException
     {
+        this.neveras = neveras;
         int cantidad = 0;
-        int never = neveras.size()-1;
-        int hasta = neveras.size()-1;
-        for(int i = 0; i < solicitudes.size(); i++)
+        while(!(solicitudes.isEmpty()))
         {
-            cantidad = solicitudes.get(i).cantidad();
-            int numero = i+1;
-            System.out.println("solicitud numero: "+ numero + " "+ "empresa: "+solicitudes.get(i).nombre()+" le corresponden: ");
-            if(hasta >= 0){
-            hasta = hasta - cantidad;
-            while(never > hasta)
+            cantidad = solicitudes.getFirst().cantidad();
+            System.out.println("solicitud numero: "+ " "+ "empresa: "+solicitudes.getFirst().nombre()+" le corresponden: ");
+            for(int i = 0; i < cantidad; i++)
             {
-                System.out.println("Codigo: "+neveras.get(never).codigo()+" "+"Descripcion: "+ neveras.get(never).descripcion());
-                neveras.remove(never);
-                never--;
-                System.out.println();
+                repartirNeveras();
             }
             cantidad = 0;
-            }else{
-                System.out.println("No hay existencia de productos");
-            }
+            solicitudes.removeFirst();
         }
-        
+    }
+    
+    private void repartirNeveras()
+    {
+        System.out.println(neveras.getLast().codigo() + " "+ neveras.getLast().descripcion());
+        neveras.removeLast();
     }
 }
