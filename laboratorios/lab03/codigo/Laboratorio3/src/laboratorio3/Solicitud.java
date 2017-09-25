@@ -13,12 +13,10 @@ public class Solicitud {
     
     private int cantidad;
     private String nombreDeLaTienda;
-    private LinkedList<Neveras> neveras;
     public Solicitud(String nombreDeLaTienda, int cantidad)
     {
         this.cantidad = cantidad;
         this.nombreDeLaTienda = nombreDeLaTienda;
-        neveras = new LinkedList<>();
     }
     
     public int cantidad()
@@ -29,10 +27,5 @@ public class Solicitud {
     public String nombre()
     {
         return nombreDeLaTienda;
-    }
-    
-    public void agregarNe(Nevera nevera)
-    {
-        neveras.add(nevera);
     }
 }

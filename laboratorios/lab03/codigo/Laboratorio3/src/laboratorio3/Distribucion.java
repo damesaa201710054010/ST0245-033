@@ -11,31 +11,29 @@ import java.io.*;
  * @author danys
  */
 public class Distribucion {
-    private LinkedList distribucion;
-    public Distribucion()
+    public void ejercicio4(LinkedList<Neveras> neveras, LinkedList<Solicitud> solicitudes)throws IOException
     {
-        distribucion = new LinkedList();
-    }
-    public static void ejercicio4(LinkedList<Neveras> neveras, LinkedList<Solicitud> solicitudes)throws IOException
-    {
-        int recorridoNeveras = neveras.size()-1;
-        int hasta = neveras.size();
         int cantidad = 0;
-        int tamaño = solicitudes.size()-1;
-        Iterator<Solicitud> iterador2 = solicitudes.iterator();
-        while(tamaño >= 0)
+        int never = neveras.size()-1;
+        int hasta = neveras.size()-1;
+        for(int i = 0; i < solicitudes.size(); i++)
         {
-            
-            cantidad = solicitudes.get(tamaño).cantidad();//iterador2.next().cantidad();
+            cantidad = solicitudes.get(i).cantidad();
+            int numero = i+1;
+            System.out.println("solicitud numero: "+ numero + " "+ "empresa: "+solicitudes.get(i).nombre()+" le corresponden: ");
+            if(hasta >= 0){
             hasta = hasta - cantidad;
-            while(recorridoNeveras > hasta)
+            while(never > hasta)
             {
-                solicitudes.get(tamaño).agregarNe(neveras.get(recorridoNeveras));
-                recorridoNeveras--;
+                System.out.println("Codigo: "+neveras.get(never).codigo()+" "+"Descripcion: "+ neveras.get(never).descripcion());
+                never--;
+                System.out.println();
             }
             cantidad = 0;
-            tamaño--;
+            }else{
+                System.out.println("No hay existencia de productos");
+            }
         }
-        System.out.println(solicitudes);
+        
     }
 }

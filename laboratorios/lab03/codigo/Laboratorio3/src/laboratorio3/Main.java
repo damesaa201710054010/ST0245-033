@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package laboratorio3;
+import java.io.IOException;
 import java.util.*;
 /**
  *
@@ -11,7 +12,7 @@ import java.util.*;
  */
 public class Main 
 {
-    public static void main(String[] args) 
+    public static void main(String[] args) throws IOException 
     {   
         /*LinkedList lis = new LinkedList();
         lis.add(1);
@@ -46,6 +47,7 @@ public class Main
         System.out.println(ins.SmartInsert(lis, 5));
         
         System.out.println(ins.pivote(lispi2));*/
+        
         Neveras uno = new Neveras(1, "haceb");
         Neveras dos = new Neveras(2, "lg");
         Neveras tres = new Neveras(3, "ibm");
@@ -78,22 +80,7 @@ public class Main
         solicitudes.add(sol2);
         solicitudes.add(sol3);
         solicitudes.add(sol4);
-        try
-        {
-            Distribucion dis1 = new Distribucion();
-            dis1.ejercicio4(neveras, solicitudes);
-        }catch(Exception e)
-        {
-            System.out.println("error");
-        }
-        
-        
-                
-        /*
-           solicitudes = [("eafit", 10), ("la14", 2), ("olimpica", 4), ("éxito",
-1)]
-                
-        */
-        
+        Distribucion dis1 = new Distribucion();
+        dis1.ejercicio4(neveras, solicitudes);
     }
 }
