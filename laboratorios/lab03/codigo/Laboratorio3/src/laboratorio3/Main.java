@@ -43,14 +43,15 @@ public class Main
         lispi2.add(5);
         lispi2.add(2);
         lispi2.add(11);
-        //lispi2.add(10);
+        lispi2.add(10);
         Laboratorio3 ins = new Laboratorio3();
         //System.out.println(ins.multp(lis));
         //System.out.println(ins.multIt(lis2));
         
         //System.out.println(ins.SmartInsert(lis, 5));
         
-        System.out.println(ins.pivoteNoEf(lispi2));
+        //System.out.println(ins.pivoteNoEf(lispi2));
+        System.out.println(ins.pivoteEf(lispi));
         
         //para el punto 1.4
         /*Neveras uno = new Neveras(1, "haceb");

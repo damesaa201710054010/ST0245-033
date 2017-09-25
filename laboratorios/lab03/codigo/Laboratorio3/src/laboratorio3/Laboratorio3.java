@@ -59,7 +59,8 @@ public class Laboratorio3
     }
     
     /**
-     * Busca en donde esta el equilibrio de la suma en la lista e indica en que posisicion se produce este equilibrio
+     * Busca en donde esta el equilibrio de la suma en la lista a ambos lados de una posicion especifica
+     * e indica en que posisicion se produce este equilibrio
      * @param l lista en la cual se buscara el pivote
      * @return la posicion de tipo entero, indica donde deberia de ir el pivote
      */
@@ -88,5 +89,35 @@ public class Laboratorio3
             }
         }
         return var;
-    }  
+    }
+    
+    public int pivoteEf(List<Integer> l)
+    {
+        int suma = 0;
+        int suma2 = 0;
+        int sumaActual = 0;
+        int ndistancia = 0;
+        int distancia = 0;
+        int mejorIndice = 0;
+        int sumatotal = 0;
+        Iterator<Integer> iterador = l.iterator();
+        while(iterador.hasNext())
+        {
+            suma = suma + iterador.next();
+        }
+        ndistancia = suma - l.get(0);
+        for(int i = 1; i < l.size(); i++)
+        {
+            sumatotal = suma - l.get(i);
+            suma2 = suma2 + l.get(i-1);
+            sumaActual = sumatotal - suma2; 
+            if(sumaActual > suma2)distancia = sumaActual - suma2;
+            if(distancia < ndistancia)
+            {
+                ndistancia = distancia;
+                mejorIndice = i;
+            }
+        }
+        return mejorIndice;
+    }
 }
