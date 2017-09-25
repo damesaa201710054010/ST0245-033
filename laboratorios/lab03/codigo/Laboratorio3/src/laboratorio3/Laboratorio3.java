@@ -63,20 +63,30 @@ public class Laboratorio3
      * @param l lista en la cual se buscara el pivote
      * @return la posicion de tipo entero, indica donde deberia de ir el pivote
      */
-    public int pivote(List<Integer> l)
+    public int pivoteNoEf(List<Integer> l)
     {
-        int sum = 0;
+        int sum  = 0;
         int sum2 = 0;
-        Iterator<Integer> iterador = l.iterator();
+        int min = 0;
+        int var = 0;
+        int nuevoMin = 0;
         for(int i = 0; i < l.size(); i++)
         {
-            sum = sum + iterador.next();
+            for(int j = i; j < l.size()-1; j++)
+            {
+                sum = sum + l.get(j+1);
+            }
+            for(int h = i; h >= 0; h--)
+            {
+                if(h > 0) sum2 = sum2 + l.get(h-1);
+            }
+            nuevoMin = (sum>= sum2) ? sum - sum2 : sum2-sum;
+            if(min < nuevoMin)
+            {
+                min = nuevoMin;
+                var = i;
+            }
         }
-        System.out.print(sum);
-        for(int j = 0; j < l.size(); j++)
-        {
-            sum2 = sum2 + iterador.next();
-        }
-        return 7;
+        return var;
     }  
 }

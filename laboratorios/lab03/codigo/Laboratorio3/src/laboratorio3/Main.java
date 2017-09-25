@@ -50,7 +50,7 @@ public class Main
         
         //System.out.println(ins.SmartInsert(lis, 5));
         
-        System.out.println(ins.pivote(lispi2));
+        System.out.println(ins.pivoteNoEf(lispi2));
         
         //para el punto 1.4
         /*Neveras uno = new Neveras(1, "haceb");
