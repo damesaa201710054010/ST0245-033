@@ -39,4 +39,24 @@ public class Distribucion {
         System.out.println(neveras.getLast().codigo() + " "+ neveras.getLast().descripcion());
         neveras.removeLast();
     }
+    
+    public void ejercicio4A(List<Neveras> neveras, List<Solicitud> solicitudes)throws IOException
+    {
+        int i = neveras.size()-1;
+        int hasta = neveras.size()-1;
+        int cantidad = 0;
+        int h = 0;
+        while( h < solicitudes.size())
+        {
+            cantidad = solicitudes.get(h).cantidad();
+            System.out.println("solicitud numero: "+ " "+ "empresa: "+solicitudes.get(h).nombre()+" le corresponden: ");
+            hasta = hasta - cantidad;
+            while(i > hasta)
+            {
+                System.out.println(neveras.get(i).codigo() + " "+ neveras.get(i).descripcion());
+                i--;
+            }
+            h++;
+        }
+    }
 }

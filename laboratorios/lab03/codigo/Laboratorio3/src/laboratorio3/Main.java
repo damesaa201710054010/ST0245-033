@@ -17,7 +17,7 @@ public class Main
     public static void main(String[] args)
     {   
         //para los primeros tres putnos
-        LinkedList lis = new LinkedList();
+        /*LinkedList lis = new LinkedList();
         lis.add(1);
         lis.add(2);
         lis.add(3);
@@ -51,10 +51,10 @@ public class Main
         //System.out.println(ins.SmartInsert(lis, 5));
         
         //System.out.println(ins.pivoteNoEf(lispi2));
-        System.out.println(ins.pivoteEf(lispi));
+        System.out.println(ins.pivoteEf(lispi));*/
         
         //para el punto 1.4
-        /*Neveras uno = new Neveras(1, "haceb");
+        Neveras uno = new Neveras(1, "haceb");
         Neveras dos = new Neveras(2, "lg");
         Neveras tres = new Neveras(3, "ibm");
         Neveras cuatro = new Neveras(4, "haceb");
@@ -65,7 +65,8 @@ public class Main
         Neveras nueve = new Neveras(9, "ibm");
         Neveras diez = new Neveras(8, "lg");
         Neveras once = new Neveras(9, "ibm");
-        LinkedList<Neveras> neveras= new LinkedList<>();
+        
+        ArrayList<Neveras> neveras= new ArrayList<>();
         neveras.add(uno);
         neveras.add(dos);
         neveras.add(tres);
@@ -77,21 +78,25 @@ public class Main
         neveras.add(nueve);
         neveras.add(diez);
         neveras.add(once);
+        
         Solicitud sol = new Solicitud("exito", 1);
         Solicitud sol2 = new Solicitud("olimpica", 4);
         Solicitud sol3 = new Solicitud("la14", 2);
         Solicitud sol4 = new Solicitud("eafit", 4);
-        LinkedList<Solicitud> solicitudes = new LinkedList<>();
+        
+        ArrayList<Solicitud> solicitudes = new ArrayList<>();
         solicitudes.add(sol);
         solicitudes.add(sol2);
         solicitudes.add(sol3);
         solicitudes.add(sol4);
+        
         Distribucion dis1 = new Distribucion();
         try{
-            dis1.ejercicio4(neveras, solicitudes);
+            //el metodo para el mismo procedimiento con LinkedList se llama ejercicio4
+            dis1.ejercicio4A(neveras, solicitudes);
         }catch(IOException e)
         {
             System.out.println();
-        }*/
+        }
     }
 }
