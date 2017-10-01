@@ -44,8 +44,11 @@ public class StartingAgain {
                 System.out.println("Ingrese el nombre del archivo o carpeta a "
                         + "buscar");
                 String name = teclado.readLine();
-                if (!prueba.buscar(name)) {
-                    System.out.println("El archvio no existe\n");
+                String resultado = prueba.buscar(name);
+                if (resultado.equals("")) {
+                    System.out.println("El archivo no existe");
+                } else {
+                    System.out.println(resultado);
                 }
             }
             if (comando.equals("rm")) {
@@ -56,8 +59,8 @@ public class StartingAgain {
                     System.out.println("El archvio no existe\n");
                 }
             }
-            if(comando.equals("mkdir")){
-                System.out.println("Padre con Parent: "+prueba.obtLastDir());
+            if (comando.equals("mkdir")) {
+                System.out.println("Padre con Parent: " + prueba.obtLastDir());
             }
             comando = teclado.readLine();
         }

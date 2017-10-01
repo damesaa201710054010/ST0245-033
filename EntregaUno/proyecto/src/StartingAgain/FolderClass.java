@@ -66,36 +66,36 @@ public class FolderClass extends AbstractClass {
         return false;
     }
 
-    public boolean buscar(String name) {
+    public String buscar(String name) {
+        String re = "";
         for (int x = 0; x < archivos.size(); ++x) {
             if (archivos.get(x) instanceof Archivo) {
                 if (archivos.get(x).getNombre().equals(name)) {
-                    System.out.println("El archvio existe:\n " + archivos.get(x).getFile());
-                    lastCarp = archivos.get(x).getFile().getParent();                   
-                    return true;
+                    lastCarp = archivos.get(x).getFile().getParent();
+                    re = ("El archvio existe:\n " + archivos.get(x).getFile());
                 }
             } else if (archivos.get(x) instanceof FolderClass) {
                 if (archivos.get(x).getNombre().equals(name)) {
-                    System.out.println("El archvio existe:\n " + archivos.get(x).getFile());
                     lastCarp = archivos.get(x).getFile().toString();
-                    return true;
+                    re = ("El archvio existe:\n " + archivos.get(x).getFile());
+                    break;
+
                 } else {
                     FolderClass p = (FolderClass) archivos.get(x);
-                    p.buscar(name);
+                    re = p.buscar(name);                            
                 }
             }
 
         }
-        return false;
+        return re;
     }
-    
-    public String obtLastDir(){
-    return lastCarp;
+
+    public String obtLastDir() {
+        return lastCarp;
     }
 
     public boolean crear(String dir) {
         return false;
     }
-    
 
 }
