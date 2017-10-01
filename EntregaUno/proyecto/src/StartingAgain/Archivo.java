@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package StartingAgain;
 
 import java.io.File;
-import java.util.LinkedList;
 
 /**
  *
  * @author evinracher
  */
-public class FolderClass {
-    private LinkedList<File> archivos;
-        
+public class Archivo extends AbstractClass{
+    private File file;
+    
+    public Archivo(File file){
+        super(file);
+    }
 }

@@ -24,26 +24,33 @@ public class Proyecto {
             File[] ficheros = f.listFiles();
             for (int x = 0; x < ficheros.length; x++) {
                 if (ficheros[x].isFile()) {
-                    System.out.println("L" + ficheros[x].getName());
+                    System.out.println(space + "L " + ficheros[x].getName());
                 } else {
-                    space = space + " ";
-                    System.out.println(space + ficheros[x].getName());
-                    recorrer(ficheros[x], space);
+                    System.out.println(space+"Carpeta: " + ficheros[x].getName());
+                    String esp = space+"-";
+                    recorrer(ficheros[x].listFiles(), esp);
+
                 }
             }
         }
 
     }
 
-    public static void recorrer(File fichero, String space) {
-        File[] ficheros = fichero.listFiles();
+    public static void imprimir(File[] f) {
+        for (int i = 0; i < f.length; ++i) {
+            System.out.println("--" + f[i].getName());
+        }
+    }
+
+    public static void recorrer(File[] ficheros, String space) {
+        String esp = space;
         for (int x = 0; x < ficheros.length; x++) {
             if (ficheros[x].isFile()) {
-                System.out.println(space + "L " + ficheros[x].getName());
+                System.out.println(esp + "L " + ficheros[x].getName());
             } else if (ficheros[x].isDirectory()) {
-                space = space + " ";
-                System.out.println(space + ficheros[x].getName());
-                recorrer(ficheros[x], space);
+                System.out.println(space+"Carpeta: " + ficheros[x].getName());
+                esp = space + "-";
+                recorrer(ficheros[x].listFiles(), esp);
             }
         }
     }
