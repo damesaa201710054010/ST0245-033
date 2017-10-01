@@ -22,4 +22,9 @@ public abstract class AbstractClass {
     public String getNombre() {
         return identificador.getName();
     }
+    
+    public File getFile(){
+        return this.identificador;
+    }
+    
 }

@@ -5,7 +5,10 @@
  */
 package StartingAgain;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -18,14 +21,47 @@ public class StartingAgain {
     private String OSArch;
     private String OSversion;
     private String OSdataModel;
+    private FolderClass prueba;
+    private File Last;
 
     public StartingAgain() {
         definiendoSistema();
         loading();
         File f = new File(sDirectorio);
-        FolderClass prueba = new FolderClass(f, "");
-        System.out.println("\nListando elementos del directorio: "+ sDirectorio);
-        prueba.listar("");
+        prueba = new FolderClass(f, "");
+    }
+
+    public void consola() throws IOException {
+        BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+        String comando = teclado.readLine();
+        while (!(comando.equals("exit"))) {
+            if (comando.equals("ls")) {
+                System.out.println("\nListando elementos del directorio: " + sDirectorio);
+                prueba.listar("");
+
+            }
+            if (comando.equals("buscar")) {
+                System.out.println("Ingrese el nombre del archivo o carpeta a "
+                        + "buscar");
+                String name = teclado.readLine();
+                if (!prueba.buscar(name)) {
+                    System.out.println("El archvio no existe\n");
+                }
+            }
+            if (comando.equals("rm")) {
+                System.out.println("Ingrese el nombre del archivo o carpeta a "
+                        + "eliminar");
+                String name = teclado.readLine();
+                if (!prueba.eliminar(name)) {
+                    System.out.println("El archvio no existe\n");
+                }
+            }
+            if(comando.equals("mkdir")){
+                System.out.println("Padre con Parent: "+prueba.obtLastDir());
+            }
+            comando = teclado.readLine();
+        }
+        System.out.println("logout");
     }
 
     public void loading() {
@@ -50,10 +86,5 @@ public class StartingAgain {
             System.out.println("No tenemos mac :c");
         }
 
-    }
-
-    public static void main(String[] args) {
-        StartingAgain Probando = new StartingAgain();
-    
     }
 }
