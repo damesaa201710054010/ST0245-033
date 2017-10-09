@@ -7,7 +7,7 @@ package taller11;
 
 /**
  *
- * @author cl18412
+ * @author Kevin Parra, Daniel Mesa
  */
 public class Taller11 {
 

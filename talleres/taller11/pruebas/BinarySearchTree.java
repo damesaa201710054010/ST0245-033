@@ -2,7 +2,7 @@ package taller11;
 
 /**
  *
- * @author Kevin Parra
+ * @author Kevin Parra, Daniel Mesa
  */
 public class BinarySearchTree {
 
