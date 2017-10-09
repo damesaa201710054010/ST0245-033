@@ -104,10 +104,10 @@ public class Laboratorio4 {
                 boolean poA = pilaInicial.get(i).contains(a);
                 boolean poB = pilaInicial.get(i).contains(b);
                 if (poA) {
-                    posicionDeB = i;
+                    posicionDeA = i;
                 }
                 if (poB) {
-                    posicionDeA = i;
+                    posicionDeB = i;
                 }
             }
             if (posicionDeA != posicionDeB) {
@@ -116,6 +116,7 @@ public class Laboratorio4 {
                     pilaInicial.get(po).push(po);
                     po = (int) pilaInicial.get(posicionDeB).pop();
                 }
+                pilaInicial.get(posicionDeB).push(b);
                 Stack Aux = new Stack();
                 po = (int) pilaInicial.get(posicionDeA).pop();
                 while (po != a) {
