@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package taller11;
+//package taller11;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Taller11 {
         arbol.insert(3);
         arbol.insert(7);
         arbol.search(1);
-        arbol.recursivePrint();
+	arbol.recursivePrint();
         arbol.delete(1);
 
     }

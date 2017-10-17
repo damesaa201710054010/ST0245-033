@@ -1,4 +1,4 @@
-package taller11;
+//package taller11;
 
 /**
  *
@@ -28,7 +28,6 @@ public class BinarySearchTree {
             return false;
         }
         if (nodo.data == n) {
-            System.out.println("ESTAA");
             return true;
         }
         if (nodo.data < n) {
