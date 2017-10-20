@@ -1,8 +1,8 @@
-package laboratorio5;
+//package laboratorio5;
 
 /**
  *
- * @author Kevin Parra
+ * @author Kevin Parra, Daniel Mesa
  */
 public class BinaryTree {
 

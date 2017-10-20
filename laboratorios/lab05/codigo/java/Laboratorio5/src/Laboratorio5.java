@@ -30,7 +30,13 @@ public class Laboratorio5 {
         //Crea el árbol familiar
         BinaryTree tree = new BinaryTree();
         // ...
-        
+        Node raiz = new Node("daniel");
+	
+	Node papa = new Node("hector");
+	Node mama = new Node("adriana");
+	raiz.left = mama;
+	raiz.right = papa;
+	tree.root = raiz;
         //Imprime el árbol familiar
         tree.recursivePrint();
 
