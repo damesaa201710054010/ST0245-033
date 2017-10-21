@@ -43,18 +43,18 @@ public class Arbol {
 
     }
 
-    private void preorden(Node node) {
+    private void posOrden(Node node) {
 	if (node == null) {
         }else {
-	    preorden(node.left);
-	    preorden(node.right);
+	    posOrden(node.left);
+	    posOrden(node.right);
 	    System.out.println(node.data);
 	    
 	}
     }
 
-    public void preorden() {
-	preorden(root);
+    public void posOrden() {
+	posOrden(root);
     }
 
     public static void main(String[] args)
@@ -67,6 +67,6 @@ public class Arbol {
 		arbol.insert(numero);
 		numero = in.nextInt();
 	    }
-	arbol.preorden();
+	arbol.posOrden();
     }   
 }
