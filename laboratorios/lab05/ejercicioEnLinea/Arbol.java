@@ -61,11 +61,11 @@ public class Arbol {
     {
 	Arbol arbol = new Arbol();
 	Scanner in = new Scanner(System.in);
-	int numero = in.nextInt();
-	while(numero > 0)
+	int  numero = in.nextInt();
+	while(numero >= 0)
 	    {
 		arbol.insert(numero);
-		numero = in.nextInt();	
+		numero = in.nextInt();
 	    }
 	arbol.preorden();
     }   
