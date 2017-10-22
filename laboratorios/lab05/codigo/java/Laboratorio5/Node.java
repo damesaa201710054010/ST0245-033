@@ -1,5 +1,11 @@
-package laboratorio5;
-
+//package laboratorio5;
+/**
+ * Esta clase define un nodo, que tendra un lado derecho otro izquierdo, ademas la informacion, como el dato que contiene y el sexo del dato que contiene
+ *
+ *
+ *
+ * @author Kevin Parra, Daniel Mesa
+ */
 public class Node {
 
         public String nombre;

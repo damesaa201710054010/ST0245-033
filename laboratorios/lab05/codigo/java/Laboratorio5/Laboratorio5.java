@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package laboratorio5;
+//package laboratorio5;
 
 /**
- * Clase para probar el arbol
+ * Clase para probar el arbol, contiene ademas los metodos proporcionados por el profesor para dibujar
  *
- * @author Kevin Parra
+ * @author Kevin Parra, Daniel Mesa
  */
 public class Laboratorio5 {
 
@@ -23,11 +18,20 @@ public class Laboratorio5 {
         arbol.insert("Daniel", "Adriana", 0);
         arbol.insert("Adriana", "Estella", 0);
         arbol.insert("Adriana", "Willmar", 1);
-        arbol.insert("Estella", "Santiago", 0);
+        arbol.insert("Estella", "Jesus", 1);
+	arbol.insert("Estella", "Albertina", 0);
+	arbol.insert("Hector", "Antonio", 1);
         arbol.search("Tomasina");
+	System.out.println();
+	arbol.search("Estella");
+	System.out.println();
         arbol.recursivePrint();
-        arbol.searchForGrand();
+	System.out.println();
+        arbol.searchForGrand("Daniel");
+	arbol.searchForGrand("Adriana");
+	System.out.println();
         System.out.println("Tamaño: " + arbol.maxheight());
+	System.out.println();
         dibujarArbol(arbol);
         
     }

@@ -1,8 +1,8 @@
-package laboratorio5;
+//package laboratorio5;
 
 /**
- *
- * @author Kevin Parra
+ * Esta es la estructura del arbol, con sus respectivos metodos para busquedas, insertar y ademas imprimir tanto el arbol como su tamaño
+ * @author Kevin Parra, Daniel Mesa
  */
 public class BinaryTree {
 
@@ -95,23 +95,23 @@ public class BinaryTree {
 
     private Node insertPrivate(Node nodo, String nombre, int sexo) {
 
-        if (sexo == 0) {
+        if (sexo == 1) {
             if (nodo.right == null) {
                 Node nodito = new Node(nombre, sexo);
                 nodo.right = nodito;
                 return nodito;
             } else {
-                System.out.println("No se puede agregar el ancestro materno");
+                System.out.println("No se puede agregar el ancestro paterno");
             }
         }
 
-        if (sexo == 1) {
+        if (sexo == 0) {
             if (nodo.left == null) {
                 Node nodito = new Node(nombre, sexo);
                 nodo.left = nodito;
                 return nodito;
             } else {
-                System.out.println("No se puede agregar el ancestro paterno");
+                System.out.println("No se puede agregar el ancestro materno");
             }
         }
         return null;
@@ -136,20 +136,18 @@ public class BinaryTree {
     }
 
     /**
-     * Método para buscar las abuelas maternas
+     * Método para buscar la abuela materna de alguien
      */
-    public void searchForGrand() {
-        Node gran1 = root.left.right;
-        Node gran2 = root.right.right;
-        System.out.println("Abuelas: ");
-        if (gran1 != null) {
-            System.out.println(gran1.nombre);
-        }
-
-        if (gran2 != null) {
-            System.out.println(gran2.nombre);
-        }
-
+    public void searchForGrand(String persona) {
+        Node buscar = searchForAncestor(persona);
+        Node grand = buscar.left.left;
+        System.out.print("Abuela: ");
+        if (grand != null) {
+            System.out.println(grand.nombre);
+        }else
+	    {
+		System.out.println("No existe registro");
+	    }
     }
 
     /**
