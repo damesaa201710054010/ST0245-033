@@ -12,7 +12,7 @@ public class Carpeta extends AbstractClass {
 
     public String space = "";
     private LinkedList<AbstractClass> archivos;
-    private String lastCarp; //<- no se usa
+    //private String lastCarp; //<- no se usa
 
     /**
      * Metodo para crear una carpeta en disco
@@ -46,7 +46,7 @@ public class Carpeta extends AbstractClass {
         archivos = new LinkedList<>();
     }
      
-     public Carpeta(String file) {
+    public Carpeta(String file) {
         super(file, null);
         archivos = new LinkedList<>();
     }

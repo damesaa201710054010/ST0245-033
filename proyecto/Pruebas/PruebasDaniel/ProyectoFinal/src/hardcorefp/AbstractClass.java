@@ -6,6 +6,7 @@
 package hardcorefp;
 
 import java.io.File;
+import java.util.LinkedList;
 
 /**
  * Clase abstracta que permite la abstraccion
@@ -16,7 +17,6 @@ public abstract class AbstractClass {
     private File identificador;
     private String nombre;
     private Carpeta padre;
-    
     public AbstractClass(File file) {
         this.identificador = file;
     }
@@ -26,8 +26,8 @@ public abstract class AbstractClass {
         this.identificador = archivo;
     }
     
-        public AbstractClass(String nombre, Carpeta padre){
-        File archivo = new File("./"+nombre);
+    public AbstractClass(String nombre, Carpeta padre) {
+        File archivo = new File("./" + nombre);
         this.identificador = archivo;
         this.padre = padre;
     }
@@ -47,5 +47,4 @@ public abstract class AbstractClass {
     public Carpeta getPadre(){
         return this.padre;
     }
-    
 }

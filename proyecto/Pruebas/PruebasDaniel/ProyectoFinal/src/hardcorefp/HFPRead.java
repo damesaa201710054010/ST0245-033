@@ -26,11 +26,9 @@ public class HFPRead {
         Carpeta home = new Carpeta(br.readLine());
         System.out.println("home: "+home.getNombre());
         //Folder home = new Folder(br.readLine());
-
         jumpBlanks();
         calcLvl();
         loadTo(home, currLvl);
-
         return home;
     }
 
@@ -55,10 +53,8 @@ public class HFPRead {
 
     private void loadTo(Carpeta fold, int fLvl) throws IOException {
         Stack<AbstractClass> files = new Stack<>();
-
         while (!isDigit(curr)) {
             calcLvl();
-
             if (currLvl == fLvl) {
                 files.push(make(fold));
                 jumpBlanks();

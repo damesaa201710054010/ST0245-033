@@ -6,6 +6,7 @@
 package hardcorefp;
 
 import java.io.File;
+import java.util.LinkedList;
 
 /**
  * Clase para encapsular los archivos
@@ -13,7 +14,6 @@ import java.io.File;
  */
 public class Archivo extends AbstractClass{
     private File file;
-    
     public Archivo(File file){
         super(file);
     }
@@ -25,6 +25,4 @@ public class Archivo extends AbstractClass{
     public Archivo(String file, Carpeta padre){
         super(file, padre);
     }
-    
-    
 }

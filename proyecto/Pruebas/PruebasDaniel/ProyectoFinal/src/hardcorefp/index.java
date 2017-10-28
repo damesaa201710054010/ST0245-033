@@ -5,13 +5,15 @@
  */
 package hardcorefp;
 
+import java.io.IOException;
+
 /**
  *
  * @author evinracher
  */
 public class index {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         consola Probando = new consola();  
         try {
             Probando.consola();
