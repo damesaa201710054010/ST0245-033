@@ -16,7 +16,7 @@ import java.util.LinkedList;
  * estructura de datos que hemos implementado, la cual podria tratarse como dos
  * estructuras, por una parte se tiene un treeMap el cual se usa para la
  * busqueda de los archivos, y por otra se tiene una implementacion en la cual
- * hay dos clases, Archivo y Carpeta, que heradan a su vez de una clase llamada
+ * hay dos clases, Archivo y Carpeta, que heredan a su vez de una clase llamada
  * AbstractClass
  *
  * @author evinracher
