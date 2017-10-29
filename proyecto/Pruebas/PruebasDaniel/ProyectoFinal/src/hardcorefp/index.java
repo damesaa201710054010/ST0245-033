@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hardcorefp;
 
 import java.io.IOException;
 
 /**
- *
- * @author evinracher
+ * Clase para ejecutar el proyecto desarrollado para la materia de Estructuras
+ * de datos y algoritmos I
+ * Docente: Mauricio Toro
+ * @author Kevin Arley Parra(evinracher)
+ * @author Daniel Mesa
  */
 public class index {
     

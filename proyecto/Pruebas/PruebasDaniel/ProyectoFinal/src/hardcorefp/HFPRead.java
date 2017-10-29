@@ -24,7 +24,7 @@ public class HFPRead {
         jumpBlanks();
         //Home no tiene padre :(
         Carpeta home = new Carpeta(br.readLine());
-        System.out.println("home: "+home.getNombre());
+        System.out.println("Home: "+home.getNombre());
         //Folder home = new Folder(br.readLine());
         jumpBlanks();
         calcLvl();
@@ -32,6 +32,7 @@ public class HFPRead {
         return home;
     }
 
+    
     private boolean isLetter(int a) {
         return (a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z');
     }

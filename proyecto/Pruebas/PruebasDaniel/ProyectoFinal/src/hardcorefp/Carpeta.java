@@ -6,18 +6,20 @@ import java.util.Stack;
 
 /**
  * Clase para encapsular las carpetas
- * @author Evinracher
+ *
+ * @author evinracher
  */
 public class Carpeta extends AbstractClass {
 
     public String space = "";
     private LinkedList<AbstractClass> archivos;
-    //private String lastCarp; //<- no se usa
+    private String lastCarp; //<- no se usa
 
     /**
      * Metodo para crear una carpeta en disco
+     *
      * @param file
-     * @param space 
+     * @param space
      */
     public Carpeta(File file, String space) {
         super(file);
@@ -28,32 +30,42 @@ public class Carpeta extends AbstractClass {
 
     /**
      * Este metodo ya no se usará
-     * @deprecated 
+     *
+     * @deprecated
      */
-     public Carpeta(String file, String space) {
+    public Carpeta(String file, String space) {
         super(file);
         archivos = new LinkedList<>();
         generarLinkedArch(file);
         this.space = space;
     }
-     
-     /**
-      * Metodo para crear una carpeta con lectura de archivo .txt
-      * @param file 
-      */
-     public Carpeta(String file, Carpeta padre) {
+
+    /**
+     * Metodo para crear una carpeta con lectura de archivo .txt
+     *
+     * @param file
+     */
+    public Carpeta(String file, Carpeta padre) {
         super(file, padre);
         archivos = new LinkedList<>();
     }
-     
+
+    /**
+     * Metodo constructor del la carpeta home
+     *
+     * @param file El archivo que representa la carpeta raiz, esta carpeta
+     * tendra el valor nulo en la variable padre
+     */
     public Carpeta(String file) {
         super(file, null);
         archivos = new LinkedList<>();
     }
 
     /**
-     * Para generar la linked list desde el disco
-     * @param file 
+     * Para generar la linked list desde el disco, no se usa en la estrutura
+     * principal
+     *
+     * @param file
      */
     public void generadorLinked(File[] file) {
         for (int x = 0; x < file.length; x++) {
@@ -64,26 +76,28 @@ public class Carpeta extends AbstractClass {
             }
         }
     }
-    
+
     /**
      * Generar la linked list usando el metodo de lectura del archivo hardcore
      * final project (y)
-     * @param Files 
+     *
+     * @param Files
      */
-    public void generadorFinal(Stack Files){
+    public void generadorFinal(Stack Files) {
         while (!Files.isEmpty()) {
-            archivos.addFirst((AbstractClass)Files.pop());
+            archivos.addFirst((AbstractClass) Files.pop());
         }
     }
 
-    public LinkedList<AbstractClass> getList (){
+    public LinkedList<AbstractClass> getList() {
         return archivos;
     }
 
     /**
      * Metodo viejo, servia pero es obsoleto y faltaba la parte de las carpetas,
      * asi que está incompleto
-     * @param archivo 
+     *
+     * @param archivo
      */
     private void generarLinkedArch(String archivo) {
         int cont = 0;
@@ -118,12 +132,20 @@ public class Carpeta extends AbstractClass {
         }
     }
 
+    /**
+     * Lista los elementos almacenados en una carpeta
+     */
     public void listarSimple() {
         for (int i = 0; i < archivos.size(); ++i) {
             System.out.println(archivos.get(i).getNombre());
         }
     }
 
+    /**
+     * Lista en forma de arbol los elementos almacenados en una carpeta
+     *
+     * @param space Espacion para las ramas
+     */
     public void listar(String space) {
         for (int x = 0; x < archivos.size(); ++x) {
             if (archivos.get(x) instanceof Archivo) {
@@ -131,10 +153,22 @@ public class Carpeta extends AbstractClass {
             } else if (archivos.get(x) instanceof Carpeta) {
                 System.out.println(space + "Carpeta: " + archivos.get(x).getNombre());
                 String esp = space + "-";
-                System.out.println("Espacio actual: "+esp);
                 Carpeta p = (Carpeta) archivos.get(x);
-                System.out.println("Espacio de carpeta "+p.space);
                 p.listar(esp);
+            }
+        }
+    }
+
+    /**
+     * Lista los elementos almacenados en una carpeta indicando si son carpetas
+     * o archivos
+     */
+    public void listarSinR() {
+        for (int x = 0; x < archivos.size(); ++x) {
+            if (archivos.get(x) instanceof Archivo) {
+                System.out.println(space + "Archivo: " + archivos.get(x).getNombre());
+            } else if (archivos.get(x) instanceof Carpeta) {
+                System.out.println(space + "Carpeta: " + archivos.get(x).getNombre());
             }
         }
     }
@@ -188,14 +222,6 @@ public class Carpeta extends AbstractClass {
 
         }
         return re;
-    }
-
-    public String obtLastDir() {
-        return lastCarp;
-    }
-
-    public boolean crear(String dir) {
-        return false;
     }
 
 }

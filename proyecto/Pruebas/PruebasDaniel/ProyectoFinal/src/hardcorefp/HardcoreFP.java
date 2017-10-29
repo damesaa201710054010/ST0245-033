@@ -8,48 +8,91 @@ package hardcorefp;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
- * Consideraciones: Evinracher es el AKA de Kevin Arley Parra, anietog1 es
- * nuestro camarada del grupo de competitiva
+ * Clase que contiene las estructuras principales que se implementaron
+ * Consideraciones: 
+ * anietog1 es nuestro camarada del grupo de competitiva
  *
- * @author Evinracher ft anietog1
+ * @author evinracher 
+ * @authot anietog1
+ * @author Daniel Mesa
  */
 public class HardcoreFP {
 
     private static Carpeta home;
     public static TreeMap arbol;
+
+    /**
+     * Metodo constructor, el cual instancia un objeto de la clase HFPRead, el 
+     * cual lee un archivo de texto que contiene la estructura a procesar y luego 
+     * genera un objeto de la clase TreeMap
+     * @throws IOException 
+     */
     public HardcoreFP() throws IOException {
-        HFPRead p = new HFPRead("juegos.txt");
+        HFPRead p = new HFPRead("ejemplito2.txt");
         home = p.load();
         //tree(home, "-");
         arbol = new TreeMap();
         generar(home);
 
     }
+
+    /**
+     * Permite obtender el directorio raiz
+     * @return 
+     */
+    public String getHome() {
+        return home.getNombre();
+    }
+
+    /**
+     * Metodo para generar el codigo que dibuja el arbol en la pagina: 
+     * http://www.webgraphviz.com/
+     * Este metodo tiene algunas inconsistencias
+     */
     public void dibujarArbol() {
-        System.out.println("/* arbolito para http://www.webgraphviz.com/ */");
+        System.out.println("/* Para visualizar el arbol de busqueda,"
+                + "ingrese el siguiente codigo en: http://www.webgraphviz.com/ */");
         System.out.println("digraph arbolito {");
         System.out.println("size=\"6,6\";");
         System.out.println("node [color=aquamarine, style=filled];");
-        dibujarArbolAux(arbol);
+        soutP();
         System.out.println("}");
     }
 
-    private void dibujarArbolAux(TreeMap nodo) {
-        System.out.println("entra");
-        if (nodo != null) //"x_\n__" -> "xo\n__";
-        {
-            System.out.println("ENTRA");
-            Iterator it = nodo.entrySet().iterator();
-                if (it.hasNext()) {
-                    AbstractClass ent = (AbstractClass)it.next();
-                    System.out.println("\"" + ent.getPadre() + "\" -> \"" + ent.getNombre() + "\";");
-                }
+    private void soutP() {
+        //   sout(arbol);
+        subtree(arbol);
+    }
+
+    private void subtree(TreeMap start) {
+        Set list = start.keySet();
+        Iterator it = list.iterator();
+        String actual = "";
+        if (it.hasNext()) {
+            actual = (String) it.next();
+        }
+        subTree2(it, actual);
+    }
+
+    private void subTree2(Iterator it, String act) {
+        String actual = act;
+        if (it.hasNext()) {
+            int cont = 0;
+            String[] nodos;
+            nodos = new String[2];
+            while (it.hasNext() && cont < 2) {
+                nodos[cont] = (String) it.next();
+                cont++;
             }
-        
+            System.out.println("\"" + actual + "\" -> \"" + nodos[0] + "\";");
+            subTree2(it, nodos[1]);
+            System.out.println("\"" + actual + "\" -> \"" + nodos[1] + "\";");
+            subTree2(it, nodos[0]);
+        }
     }
 
     private void tree(Carpeta start, String bars) {
@@ -91,7 +134,9 @@ public class HardcoreFP {
             }
         });
     }
-    
+    /**
+     * Metodo para listar, en forma de arbol, los archivos y carpetas del TreeMap 
+     */
     public void listar() {
         listarAux(home, "-");
     }
@@ -108,29 +153,66 @@ public class HardcoreFP {
         });
     }
 
+    /**
+     * Metodo para saber si un archivo o carpeta existe
+     * @param nombre
+     * @return true si el archivo existe o false en caso contrario
+     */
     public boolean buscar(String nombre) {
         return arbol.containsKey(nombre);
     }
 
+    /**
+     * Metodo que busca y devuelve un objeto del treeMap
+     * @param nombre
+     * @return El objeto buscado
+     */
     public Object buscarR(String nombre) {
         return arbol.get(nombre);
     }
 
+    /**
+     * Método que busca e imprime los datos de un archivo o carpeta
+     * @param nombre del archivo o carpeta a imprimir sus datos
+     */
     public void buscarIm(String nombre) {
-        if(arbol.get(nombre) instanceof LinkedList)
-        {
-            LinkedList<AbstractClass> temporal = (LinkedList)arbol.get(nombre);
+        Object r = arbol.get(nombre);
+        if (r instanceof LinkedList) {
+            System.out.println("Existen varios archivos o carpetas con ese nombre. "
+                    + "Listando todos los que se han encontrado:");
+            LinkedList<AbstractClass> temporal = (LinkedList) arbol.get(nombre);
             temporal.forEach((AbstractClass f) -> {
-                System.out.println(f.getNombre());
+                System.out.println("Nombre: " + f.getNombre() + "\nCarpeta contenedora: " + f.getPadre().getNombre());
             });
-        }else
-        {
-            AbstractClass tem = (AbstractClass)arbol.get(nombre);
-            System.out.println(tem.getNombre());
+        } else if(r instanceof AbstractClass ){
+            AbstractClass tem = (AbstractClass) r;
+            System.out.println("Nombre: " + tem.getNombre() + "\nCarpeta contenedora: " + tem.getPadre().getNombre());
+        }else{
+            System.out.println("Error en el nombre del archivo o carpeta");
         }
     }
-    public void obtRuta(String nombre) {
-        AbstractClass resul = (AbstractClass) buscarR(nombre);
+    /**
+     * Metodo para obtener la ruta de un archivo o una carpet
+     * @param nombre del archivo o la carpeta de la cual se quiere saber 
+     * la ruta
+     */
+    public void obtRutaC(String nombre) {
+        Object resul = buscarR(nombre);
+        if (resul instanceof LinkedList) {
+
+            System.out.println("Existen varios archivos o carpetas con ese nombre. "
+                    + "Listando todos los que se han encontrado:");
+            for (int i = 0; i < ((LinkedList) resul).size(); ++i) {
+                obtRuta((AbstractClass) ((LinkedList) resul).get(i));
+            }
+        } else if(resul instanceof AbstractClass) {
+            obtRuta((AbstractClass) resul);
+        }else{
+            System.out.println("Error en el nombre del archivo o carpeta");
+        }
+    }
+
+    private void obtRuta(AbstractClass resul) {
         String ruta = "/";
         String impr = obtRutaAux(resul, ruta, 0);
         if (!impr.equals("")) {
@@ -152,14 +234,4 @@ public class HardcoreFP {
             return "";
         }
     }
-    
-    /*public static void main(String[] args) throws IOException
-    {
-        HardcoreFP prueba = new HardcoreFP();
-        AbstractClass archivo = (AbstractClass)prueba.buscarR("bios");
-        System.out.println(archivo.getNombre());
-        
-        
-    }*/
-
 }

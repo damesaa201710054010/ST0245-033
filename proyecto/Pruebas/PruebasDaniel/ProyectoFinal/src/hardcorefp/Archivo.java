@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 /**
  * Clase para encapsular los archivos
- * @author Evinracher
+ * @author evinracher
  */
 public class Archivo extends AbstractClass{
     private File file;

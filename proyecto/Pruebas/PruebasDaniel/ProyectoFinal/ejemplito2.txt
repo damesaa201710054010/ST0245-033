@@ -7,8 +7,7 @@ Proyecto/
 │   ├── [mauriciotoro 255K]  ejemplo-de-un-reporte-con-plantilla-ACM.pdf
 │   ├── [mauriciotoro 1.1M]  plantilla-ACM-en-Latex.zip
 │   ├── [mauriciotoro 572K]  sig-alternate-guide.pdf
-│   ├── [mauriciotoro 1.2M]  plantilla-ACM-en-Word.doc
-│   └── [mauriciotoro 4.0K]  SIG Proceedings Template-Jan2015 Zip
+│   └── [mauriciotoro 4.0K]  Plantillas
 │       ├── [mauriciotoro 9.4K]  acmcopyright.sty
 │       ├── [mauriciotoro 144K]  acm-update.pdf
 │       ├── [mauriciotoro 336K]  flies.eps
@@ -22,6 +21,6 @@ Proyecto/
 │       ├── [mauriciotoro 255K]  sig-alternate-sample.pdf
 │       ├── [mauriciotoro  26K]  sig-alternate-sample.tex
 │       └── [mauriciotoro 1.5K]  sigproc.bib
-└── [mauriciotoro 571K]  Proyecto Final ED1 Sistema-directorios Vr 2.0.pdf
+└── [mauriciotoro 4.0K]  Planti.xps
 
 3 directories, 18 files
