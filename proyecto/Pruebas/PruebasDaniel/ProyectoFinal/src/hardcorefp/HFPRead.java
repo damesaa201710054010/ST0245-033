@@ -1,10 +1,11 @@
 package hardcorefp;
 import java.util.*;
 import java.io.*;
+//Clase hecha en colaboracion con Agustin <3
 
 /**
- * Clase hecha en colaboracion con Agustin <3
- * @author Evinracer ft Anietog1
+ * Clase para la lectura del archivo txt
+ * @author evinracer ft Anietog1
  */
 public class HFPRead {
 
@@ -18,7 +19,7 @@ public class HFPRead {
 /**
  * Retorna el home y aplica recursividad para las otras carpetas
  * @return Folder que será el home
- * @throws IOException 
+ * @throws IOException Porque usamos BufferedReader
  */
     public Carpeta load() throws IOException {
         jumpBlanks();

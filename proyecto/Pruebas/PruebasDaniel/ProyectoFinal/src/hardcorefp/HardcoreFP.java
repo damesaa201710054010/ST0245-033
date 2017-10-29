@@ -17,7 +17,7 @@ import java.util.TreeMap;
  * anietog1 es nuestro camarada del grupo de competitiva
  *
  * @author evinracher 
- * @authot anietog1
+ * @author anietog1
  * @author Daniel Mesa
  */
 public class HardcoreFP {
@@ -29,7 +29,7 @@ public class HardcoreFP {
      * Metodo constructor, el cual instancia un objeto de la clase HFPRead, el 
      * cual lee un archivo de texto que contiene la estructura a procesar y luego 
      * genera un objeto de la clase TreeMap
-     * @throws IOException 
+     * @throws IOException Porque usamos BufferedReader
      */
     public HardcoreFP() throws IOException {
         HFPRead p = new HFPRead("ejemplito2.txt");
@@ -42,7 +42,7 @@ public class HardcoreFP {
 
     /**
      * Permite obtender el directorio raiz
-     * @return 
+     * @return raiz
      */
     public String getHome() {
         return home.getNombre();
@@ -155,7 +155,7 @@ public class HardcoreFP {
 
     /**
      * Metodo para saber si un archivo o carpeta existe
-     * @param nombre
+     * @param nombre del archivo a busar
      * @return true si el archivo existe o false en caso contrario
      */
     public boolean buscar(String nombre) {
@@ -164,7 +164,7 @@ public class HardcoreFP {
 
     /**
      * Metodo que busca y devuelve un objeto del treeMap
-     * @param nombre
+     * @param nombre del Archivo a buscar
      * @return El objeto buscado
      */
     public Object buscarR(String nombre) {
@@ -222,7 +222,14 @@ public class HardcoreFP {
         }
     }
 
-    private String obtRutaAux(AbstractClass archivo, String ruta, int cont) {
+    
+    /**
+     * Permite obtener la ruta de un archivo o carpeta
+     * @param archivo  Archivo a obtener ruta
+     * @param ruta '/' para la estructura
+     * @param cont variable para debug
+     */
+    public static String obtRutaAux(AbstractClass archivo, String ruta, int cont) {
 
         AbstractClass padre;
         if (archivo != null) {

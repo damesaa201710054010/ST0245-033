@@ -31,7 +31,9 @@ public class Carpeta extends AbstractClass {
     /**
      * Este metodo ya no se usará
      *
-     * @deprecated
+     * @deprecated para versiones con el sistema antiguo
+     * @param file nombre del archivo
+     * @param space espaciador para las ramas
      */
     public Carpeta(String file, String space) {
         super(file);
@@ -43,7 +45,8 @@ public class Carpeta extends AbstractClass {
     /**
      * Metodo para crear una carpeta con lectura de archivo .txt
      *
-     * @param file
+     * @param file nombre del archivo
+     * @param padre Carpeta contenedora
      */
     public Carpeta(String file, Carpeta padre) {
         super(file, padre);

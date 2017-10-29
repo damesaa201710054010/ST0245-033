@@ -5,6 +5,7 @@
  */
 package hardcorefp;
 
+import static hardcorefp.HardcoreFP.obtRutaAux;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,7 +36,7 @@ public class consola {
      * Metodo constructor, el cual inicializa la consola y crea un objeto de la
      * clase HardcoreFP
      *
-     * @throws IOException
+     * @throws IOException Porque usamos BufferedReader
      */
     public consola() throws IOException {
         definiendoSistema();
@@ -141,7 +142,9 @@ public class consola {
                             for (int i = 0; i < ((LinkedList) carp).size(); ++i) {
                                 Object obj = ((LinkedList) carp).get(i);
                                 if (obj instanceof Carpeta) {
-                                    System.out.println(i + " - " + ((Carpeta) obj).getNombre());
+                                    String ruta = "/";
+                                    String impr = obtRutaAux((AbstractClass) obj, ruta, 0);
+                                    System.out.println(i + " - " + impr);
                                     id++;
                                 }
                             }
