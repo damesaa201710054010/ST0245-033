@@ -32,7 +32,7 @@ public class HardcoreFP {
      * @throws IOException Porque usamos BufferedReader
      */
     public HardcoreFP() throws IOException {
-        HFPRead p = new HFPRead("ejemplito2.txt");
+        HFPRead p = new HFPRead("juegos.txt");
         home = p.load();
         //tree(home, "-");
         arbol = new TreeMap();
@@ -109,7 +109,7 @@ public class HardcoreFP {
     private void generar(Carpeta start) {
         LinkedList<AbstractClass> list = start.getList();
         list.forEach((AbstractClass f) -> {
-            if (!(arbol.get(f.getNombre()) instanceof LinkedList) && arbol.get(f.getNombre()) == null) {
+            if (!(arbol.get(f.getNombre()) == null && arbol.get(f.getNombre()) instanceof LinkedList)) {
                 arbol.put(f.getNombre(), f);
                 if (f instanceof Carpeta) {
                     generar((Carpeta) f);
@@ -134,6 +134,7 @@ public class HardcoreFP {
             }
         });
     }
+    
     /**
      * Metodo para listar, en forma de arbol, los archivos y carpetas del TreeMap 
      */

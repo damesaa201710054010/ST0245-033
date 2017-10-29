@@ -12,6 +12,7 @@ import java.io.File;
  * esta
  *
  * @author evinracher
+ * @author Daniel Mesa
  */
 public abstract class AbstractClass {
 

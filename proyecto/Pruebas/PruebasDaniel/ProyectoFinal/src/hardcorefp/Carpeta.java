@@ -8,6 +8,7 @@ import java.util.Stack;
  * Clase para encapsular las carpetas
  *
  * @author evinracher
+ * @author Daniel Mesa
  */
 public class Carpeta extends AbstractClass {
 

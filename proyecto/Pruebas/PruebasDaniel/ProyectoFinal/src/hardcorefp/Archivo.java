@@ -6,11 +6,11 @@
 package hardcorefp;
 
 import java.io.File;
-import java.util.LinkedList;
 
 /**
  * Clase para encapsular los archivos
  * @author evinracher
+ * @author Daniel Mesa
  */
 public class Archivo extends AbstractClass{
     private File file;
