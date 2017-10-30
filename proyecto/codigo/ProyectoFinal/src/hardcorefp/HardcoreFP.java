@@ -37,7 +37,6 @@ public class HardcoreFP {
         //tree(home, "-");
         arbol = new TreeMap();
         generar(home);
-
     }
 
     /**
@@ -109,7 +108,7 @@ public class HardcoreFP {
     private void generar(Carpeta start) {
         LinkedList<AbstractClass> list = start.getList();
         list.forEach((AbstractClass f) -> {
-            if (!(arbol.get(f.getNombre()) == null && arbol.get(f.getNombre()) instanceof LinkedList)) {
+            if (arbol.get(f.getNombre()) == null && !(arbol.get(f.getNombre()) instanceof LinkedList)) {
                 arbol.put(f.getNombre(), f);
                 if (f instanceof Carpeta) {
                     generar((Carpeta) f);
